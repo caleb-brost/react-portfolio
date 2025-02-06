@@ -332,6 +332,59 @@ body {
   background-color: var(--primary-color);
 }
 
+/* About Me Section */
+.about-me-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-me-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-me-image {
+  flex: 0 0 300px;
+}
+
+.profile-picture {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+  transform: scale(1.05);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: -10px;
+  width: 100%;
+}
+
+.social-icons a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color);
+}
+
 /* Footer */
 .footer {
   margin-top: auto;
@@ -347,12 +400,12 @@ body {
 }
 
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin-left: 255px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  text-align: center;
 }
 
 .scroll-top-btn {
@@ -396,6 +449,7 @@ body {
 .footer-contact {
   margin-bottom: 1rem;
   width: 100%;
+  text-align: center;
 }
 
 .footer-contact h3 {
@@ -422,4 +476,18 @@ body {
 .contact-links a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+.footer .social-icons {
+  color: white;
+}
+
+.footer .social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: var(--secondary-color);
 }

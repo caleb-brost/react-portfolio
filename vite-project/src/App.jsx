@@ -1,4 +1,7 @@
 import { useState, useEffect, memo, useMemo, useCallback, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
 
 function App() {
@@ -116,11 +119,39 @@ function App() {
   const IntroSection = memo(() => (
     <section ref={sectionRefs.about} className="intro-section">
       <div className="intro-content">
-        <h2>About Me</h2>
-        <p>
-          I'm a passionate developer with a love for creating innovative solutions. 
-          My expertise spans across multiple technologies and frameworks.
-        </p>
+        <div className="about-me-container">
+          <div className="about-me-text">
+            <h2>About Me</h2>
+            <p>
+              I'm a passionate Computer Science student with a strong interest in software development 
+              and emerging technologies. My academic journey has been driven by a curiosity to understand 
+              how complex systems work and a desire to create innovative solutions.
+            </p>
+            <p>
+              Throughout my studies, I've developed skills in multiple programming languages and 
+              explored various domains of computer science, from low-level systems programming to 
+              web development and machine learning.
+            </p>
+            <div className="social-icons">
+              <a href="https://github.com/caleb-brost" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+              <a href="https://www.linkedin.com/in/caleb-brost-50462332b/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+              <a href="mailto:calebbrost252@gmail.com">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </a>
+            </div>
+          </div>
+          <div className="about-me-image">
+            <img 
+              src="/react-portfolio/profile_picture.png" 
+              alt="Caleb Brost" 
+              className="profile-picture" 
+            />
+          </div>
+        </div>
         <div className="skills-container">
           <h3>Skills</h3>
           <div className="skills-grid">
@@ -196,19 +227,19 @@ function App() {
       <div className="footer-content">
         <div className="footer-contact">
           <h3>Contact</h3>
-          <div className="contact-links">
+          <div className="social-icons">
             <a href="https://github.com/caleb-brost" target="_blank" rel="noopener noreferrer">
-              GitHub
+              <FontAwesomeIcon icon={faGithub} />
             </a>
             <a href="https://www.linkedin.com/in/caleb-brost-50462332b/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
+              <FontAwesomeIcon icon={faLinkedin} />
             </a>
             <a href="mailto:calebbrost252@gmail.com">
-              Email
+              <FontAwesomeIcon icon={faEnvelope} />
             </a>
           </div>
         </div>
-        <p> 2025 Caleb Brost. All Rights Reserved.</p>
+        <p>&copy; 2025 Caleb Brost. All Rights Reserved.</p>
       </div>
     </footer>
   ))
