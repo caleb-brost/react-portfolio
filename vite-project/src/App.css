@@ -387,107 +387,19 @@ body {
 
 /* Footer */
 .footer {
-  margin-top: auto;
-  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  padding-bottom: 4rem;
+  background-color: #30678b;
   color: white;
-  padding: 2rem;
-  text-align: center;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  position: relative;
-  bottom: -50px; /* Extend footer downwards */
-  padding-bottom: calc(2rem + 50px); /* Increase bottom padding */
+  margin-top: auto;
+  margin-bottom: -4rem;
 }
 
 .footer-content {
-  max-width: 800px;
-  margin-left: 255px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.scroll-top-btn {
-  background: none;
-  border: 2px solid white;
-  color: white;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 4px;
-}
-
-.scroll-top-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px);
-}
-
-.footer-content p {
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-.social-links {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.social-links a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: var(--secondary-color);
-}
-
-.footer-contact {
-  margin-bottom: 1rem;
-  width: 100%;
-  text-align: center;
-}
-
-.footer-contact h3 {
-  color: white;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.contact-links a {
-  color: white;
-  text-decoration: none;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.contact-links a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.footer .social-icons {
-  color: white;
-}
-
-.footer .social-icons a {
-  color: white;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.footer .social-icons a:hover {
-  color: var(--secondary-color);
+  margin-left: -2rem;
 }

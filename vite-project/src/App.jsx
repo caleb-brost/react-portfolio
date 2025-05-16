@@ -170,7 +170,7 @@ function App() {
   ))
 
   // Memoize project details to prevent unnecessary re-renders
-  const ProjectDetails = memo(({ title, techStack, description }) => (
+  const ProjectDetails = memo(({ title, techStack, description, githubUrl, liveUrl }) => (
     <div className="project-details">
       <h2>{title}</h2>
       <div className="project-tech-stack">
@@ -180,8 +180,8 @@ function App() {
       </div>
       <p>{description}</p>
       <div className="project-links">
-        <a href="#" className="btn">View Project</a>
-        <a href="#" className="btn">GitHub</a>
+        {liveUrl && <a href={liveUrl} className="btn" target="_blank" rel="noopener noreferrer">View Project</a>}
+        {githubUrl && <a href={githubUrl} className="btn" target="_blank" rel="noopener noreferrer">GitHub</a>}
       </div>
     </div>
   ))
@@ -190,19 +190,22 @@ function App() {
     // Memoize project data
     const projects = useMemo(() => [
       {
-        title: 'Title',
-        techStack: ['React', 'Node.js', 'MongoDB'],
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc eget ultricies tincidunt, velit velit bibendum velit, vel bibendum sapien nunc vel lectus. Fusce euismod, nunc sit amet aliquam lacinia, nisi enim lobortis enim, vel lacinia nunc enim eget nunc.'
+        title: 'GymRat',
+        techStack: ['React Native', 'Javascript', 'Supabase DB'],
+        description: 'GymRat is a fitness tracking website application built with React Native. It helps users create workouts, track their workouts, and monitor their progress. The app features a clean, intuitive interface for logging exercises, viewing workout history, and analyzing performance trends. Using Supabase for the backend ensures reliable data storage and real-time synchronization across devices.',
+        githubUrl: 'https://github.com/caleb-brost/gym-rat-app'
       },
       {
-        title: 'Title',
-        techStack: ['React', 'Redux', 'Firebase'],
-        description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.'
+        title: 'Connect Four',
+        techStack: ['Java Swing'],
+        description: 'A classic Connect Four game implemented as part of a college lab course, submitted through Kings University academic system. This Java Swing version features a clean user interface, two-player gameplay, win detection, and move validation. The project demonstrates fundamental Java concepts for desktop application development and OS interaction.',
+        githubUrl: 'https://github.com/caleb-brost/Java-ConnectFour'
       },
       {
-        title: 'Title',
-        techStack: ['Python', 'TensorFlow', 'Natural Language Processing'],
-        description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.'
+        title: 'Portfolio Website',
+        techStack: ['React', 'Vite', 'CSS'],
+        description: 'A modern, responsive portfolio website built using React and Vite. Features a clean, professional design with smooth scrolling navigation, dynamic content rendering, and interactive components. The site showcases my projects, skills, and contact information in an engaging and user-friendly format.',
+        githubUrl: 'https://github.com/caleb-brost/react-portfolio'
       }
     ], [])
 
@@ -215,6 +218,8 @@ function App() {
               title={project.title}
               techStack={project.techStack}
               description={project.description}
+              githubUrl={project.githubUrl}
+              liveUrl={project.liveUrl}
             />
           </div>
         ))}
